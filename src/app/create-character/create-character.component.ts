@@ -21,7 +21,7 @@ export class CreateCharacterComponent implements OnInit {
     if (submittedForm.invalid) {
       return console.log('cannot submit - form invalid');
     }
-    console.log(submittedForm);
+    console.log('adding character - create', submittedForm.value.name);
     let character = {name: submittedForm.value.name, side: submittedForm.value.side};
     this.swService.addCharacter(character);
   }
