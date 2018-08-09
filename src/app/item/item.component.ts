@@ -26,7 +26,7 @@ export class ItemComponent implements OnInit {
 //    this.sideAssigned.emit(obj);
   }
   getColor () {
-    let color = ''
+    let color = '';
     switch (this.character.side) {
       case '':
         color = 'white';
