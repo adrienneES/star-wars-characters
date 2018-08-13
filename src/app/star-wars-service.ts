@@ -48,7 +48,7 @@ export class StarWarsService {
       return char.name === charInfo.name;
     });
     this.characters[pos].side = charInfo.side;
-    this.logService.writeLog(`character ${charInfo.name} changed to side ${charInfo.side}`)
+    this.logService.writeLog(`${charInfo.name} changed to ${charInfo.side} side`)
     this.charactersChanged.next();
   };
   addCharacter (character) {
@@ -62,5 +62,11 @@ export class StarWarsService {
     }
     this.characters.push(character);
     console.log('list', this.characters);
+  }
+  deleteCharacter(name) {
+    const removedList = this.characters.filter((char)=>char.name!=name);
+    console.log(removedList);
+    this.characters = removedList;
+    this.charactersChanged.next();
   }
 }

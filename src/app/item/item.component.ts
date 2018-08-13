@@ -42,4 +42,7 @@ export class ItemComponent implements OnInit {
     }
     return color;
   }
+  onDelete() {
+    this.swService.deleteCharacter(this.character.name);
+  }
 }

@@ -25,10 +25,11 @@ export class ListComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.activatedRoute.params.subscribe(
       (params)=>{
-        this.characters = this.swService.getCharacters(params.side);
-        this.loadedSide = params.side;
+        const side = params.side === 'none'? '' : params.side;
+        this.characters = this.swService.getCharacters(side);
+        this.loadedSide = side
       },
-      (err)=>{},
+      (err)=>{}, // handle error
       ()=>{ } // end function
     );
     this.subscription = this.swService.charactersChanged.subscribe(()=>{

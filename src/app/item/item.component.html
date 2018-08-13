@@ -1,7 +1,8 @@
 <a style="cursor:pointer" class="list-group-item" [ngStyle]="{backgroundColor: getColor() }">
-    {{number}} : {{character.name}} <span *ngIf="character.side !== ''">[{{character.side}}]</span>
+    {{number}} : {{character.name}}
     <div>
         <button class="btn btn-primary" (click)="onAssign('light')">Light</button>
         <button class="btn btn-danger" (click)="onAssign('dark')">Danger</button>
+        <span style="float:right"><button class="btn btn-info" (click)="onDelete()">Delete</button></span>
       </div>
   </a>
