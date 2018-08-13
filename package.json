@@ -7,8 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
-  },
+    "e2e": "ng e2e",
+    "postinstall": "ng build --aot -prod"
+    },
   "private": true,
   "dependencies": {
     "@angular/animations": "^6.1.0",
@@ -26,6 +27,7 @@
     "path": "^0.12.7",
     "rxjs": "^6.0.0",
     "rxjs-compat": "^6.2.2",
+    "typescript": "~2.7.2",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
@@ -51,6 +53,7 @@
     "typescript": "~2.7.2"
   },
   "engines": {
-    "node": "9.6.1"
+    "node": "9.6.1",
+    "npm": "6.1.0"
   }
 }
